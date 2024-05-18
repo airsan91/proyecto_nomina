@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>NomiFast</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .log {
+         color: white;
+            font-family: "serif", "times;
+            }
+        input{
+            margin: 10px 0 0 0;
+            width: 100%;
+            min-height: 2em;
+            }
+      input[type="submit"] {
+        display: block;
+        width: 60%;
+        margin: 1em auto;
+        height: 2em;
+        font-size: 1.1rem;
+        background-color: #3b3b4f;
+        border-color: white;
+        min-width: 300px;
+      }
+      body {
+        background-image: url("C:\Users\USUARIO\Documents\proyecto_nomina\Modulos\GestionN\templates\Imagenes\logo.png");
+      }
+    </style>
+  </head>
+  <body>
+    <section
+      class="bg-purple-950 min-h-screen flex items-center justify-center"
+    >
+      <div>
+        <h1 class="log flex items-center justify-center">
+          Bienvenido a NomiFast!
+        </h1>
+        {% if error %}
+        <p class="log">Usuario o contraseña incorrectos. Inténtelo de nuevo.</p>
+        {% endif %}
+        <form method="POST">
+          {% csrf_token %}
+          <label for="usuario" class="log">Usuario:</label>
+          <input type="text" id="usuario" name="usuario" required /><br />
+          <label for="contraseña" class="log">Contraseña:</label>
+          <input
+            type="password"
+            id="contraseña"
+            name="contraseña"
+            required
+          /><br />
+          <input type="submit" value="Log in" class="log" />
+        </form>
+      </div>
+    </section>
+  </body>
+</html>

@@ -4,26 +4,30 @@ class Cargo(models.Model):
     id_Cargo = models.CharField(max_length=10, primary_key=True)
     Nombre = models.CharField(max_length=100)
     def __str__(self):
-        return self.Nombre
-    
+        txt = "{0} (Id del cargo: {1})"
+        return txt.format(self.Nombre, self.id_Cargo)
+
 class Departamento(models.Model):
     id_Dpto = models.CharField(max_length=10, primary_key=True)
     Nombre = models.CharField(max_length=100)
     def __str__(self):
-        return self.Nombre
+        txt = "{0} (Id del departamento: {1})"
+        return txt.format(self.Nombre, self.id_Dpto)
     
 class Tipo_Contrato(models.Model):
     id_TipoContrato = models.CharField(max_length=10, primary_key=True)
     Nombre = models.CharField(max_length=100)
     def __str__(self):
-        return self.Nombre
+        txt = "{0} (Id del tipo de contrato: {1})"
+        return txt.format(self.Nombre, self.id_TipoContrato)
     
 class Cuenta_Banco(models.Model):
     id_CuentaBanco = models.CharField(max_length=10, primary_key=True)
     Nombre = models.CharField(max_length=100)
     def __str__(self):
-        return self.Nombre
-
+        txt = "{0} (Id de la cuenta de banco: {1})"
+        return txt.format(self.Nombre, self.id_CuentaBanco)
+            
 class Personal(models.Model):
     id_Cedula = models.CharField(max_length=20, primary_key=True)
     Nombre_Apellidos = models.CharField(max_length=100)
@@ -42,10 +46,13 @@ class Personal(models.Model):
     Pensión = models.CharField(max_length=100)
     Fdo_Sol = models.CharField(max_length=100)
     Fecha_Ingreso = models.DateField()
-    Fecha_Retiro = models.DateField(null=True)
-
+    Fecha_Retiro = models.DateField(null = True, blank = True)
     def __str__(self):
-        return self.Nombre_Apellidos
+        txt = "{0} (Cedula: {1})"
+        if self.Salario > 2600000:
+            self.Sub_Tpte = 0
+        return txt.format(self.Nombre_Apellidos, self.Salario)
+    
     
 class Devengado(models.Model):
     Concepto = models.CharField(max_length=100, primary_key=True)
