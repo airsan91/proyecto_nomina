@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Editar Empleado</title>
+  <style>
+    <style>
+  body {
+    font-family: Arial, sans-serif;
+  }
+
+  h2 {
+    color: #333;
+  }
+
+  form {
+    width: 300px;
+    margin: 0 auto;
+  }
+
+  label {
+    display: block;
+    margin-top: 20px;
+  }
+
+  input[type="text"], input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+
+  input[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  input[type="submit"]:hover {
+    background-color: #45a049;
+  }
+</style>
+  </style>
+</head>
+<body>
+  <h2>Editar Empleado</h2>
+  <form method="POST" action="{% url 'editar_personal' empleado.id_Cedula %}">
+    {% csrf_token %}
+    <label for="id_Cedula">Cédula:</label>
+    <input type="text" id="id_Cedula" name="id_Cedula" value="{{ empleado.id_Cedula }}">
+    <label for="Nombre_Apellidos">Nombre y Apellidos:</label>
+    <input type="text" id="Nombre_Apellidos" name="Nombre_Apellidos" value="{{ empleado.Nombre_Apellidos }}">
+    <label for="Cargo_Empl">Cargo:</label>
+    <input type="text" id="Cargo_Empl" name="Cargo_Empl" value="{{ empleado.Cargo_Empl }}">
+    <label for="Dpto_Area">Departamento/Area:</label>
+    <input type="text" id="Dpto_Area" name="Dpto_Area" value="{{ empleado.Dpto_Area }}">
+    <label for="Salario">Salario:</label>
+    <input type="text" id="Salario" name="Salario" value="{{ empleado.Salario }}">
+    <label for="Sub_Tpte">Subsidio de Transporte:</label>
+    <input type="text" id="Sub_Tpte" name="Sub_Tpte" value="{{ empleado.Sub_Tpte }}">
+    <label for="Gastos_Rep">Gastos de Representación:</label>
+    <input type="text" id="Gastos_Rep" name="Gastos_Rep" value="{{ empleado.Gastos_Rep }}">
+    <label for="Sobresueldo">Sobresueldo:</label>
+    <input type="text" id="Sobresueldo" name="Sobresueldo" value="{{ empleado.Sobresueldo }}">
+    <label for="Viáticos">Viáticos:</label>
+    <input type="text" id="Viáticos" name="Viáticos" value="{{ empleado.Viáticos }}">
+    <label for="Comisiones">Comisiones:</label>
+    <input type="text" id="Comisiones" name="Comisiones" value="{{ empleado.Comisiones }}">
+    <label for="Primas_Pago_Extras">Primas y Pagos Extras:</label>
+    <input type="text" id="Primas_Pago_Extras" name="Primas_Pago_Extras" value="{{ empleado.Primas_Pago_Extras }}">
+    <label for="Tipo_Contr">Tipo de Contrato:</label>
+    <input type="text" id="Tipo_Contr" name="Tipo_Contr" value="{{ empleado.Tipo_Contr }}">
+    <label for="Cta_Banco">Cuenta Bancaria:</label>
+    <input type="text" id="Cta_Banco" name="Cta_Banco" value="{{ empleado.Cta_Banco }}">
+    <label for="Eps_Salud">EPS Salud:</label>
+    <input type="text" id="Eps_Salud" name="Eps_Salud" value="{{ empleado.Eps_Salud }}">
+    <label for="Pensión">Pensión:</label>
+    <input type="text" id="Pensión" name="Pensión" value="{{ empleado.Pensión }}">
+    <label for="Fdo_Sol">Fondo de Solidaridad:</label>
+    <input type="text" id="Fdo_Sol" name="Fdo_Sol" value="{{ empleado.Fdo_Sol }}">
+    <label for="Fecha_Ingreso">Fecha de Ingreso:</label>
+    <input type="date" id="Fecha_Ingreso" name="Fecha_Ingreso" value="{{ empleado.Fecha_Ingreso }}">
+    <label for="Fecha_Retiro">Fecha de Retiro:</label>
+    <input type="date" id="Fecha_Retiro" name="Fecha_Retiro" value="{{ empleado.Fecha_Retiro }}">
+    <input type="submit" value="Guardar cambios">
+  </form>
+</body>
+</html>

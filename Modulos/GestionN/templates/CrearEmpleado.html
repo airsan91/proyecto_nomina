@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Crear Empleado</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      h2 {
+        background-color: #6c63ff;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        margin: 0;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        width: 80%;
+        margin: 20px auto;
+      }
+
+      input,
+      button {
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+
+      button {
+        background-color: #6c63ff;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #4b49db;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Crear Empleado</h2>
+    <form method="post">
+      {% csrf_token %} {{ form.as_p }}
+      <button type="submit">Guardar</button>
+    </form>
+  </body>
+</html>

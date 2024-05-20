@@ -16,12 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from . import views
-from django.contrib.auth.views import login,logout_then_login
+from Modulos.GestionN import views
+from django.contrib.auth.views import LoginView, LogoutView
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('inicioDeSesion/', views.inicioDeSesion, name='inicioDeSesion'),
-    path('cerrarSesion/', views.cerrarSesion, name='cerrarSesion'),
+    path('cerrarSesion/', LogoutView.as_view(), name='cerrarSesion'),
+    path('', views.inicioDeSesion, name='home'),
+    path('personal/', views.personal_view, name='personal'),
+    path('editar_personal/<int:id_Cedula>/', views.edit_personal, name='editar_personal'),
+    path('detalle_personal/<int:id_Cedula>/', views.detail_personal, name='detalle_personal'),
+    path('delete_personal/<int:id_Cedula>/', views.delete_personal, name='delete_personal'),
+    path('create_superuser/', views.create_superuser),
+    path('crearEmpleado/', views.crearEmpleado, name='crearEmpleado'),
 ]

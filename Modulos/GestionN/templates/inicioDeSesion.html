@@ -42,15 +42,10 @@
         {% endif %}
         <form method="POST">
           {% csrf_token %}
-          <label for="usuario" class="log">Usuario:</label>
-          <input type="text" id="usuario" name="usuario" required /><br />
-          <label for="contraseña" class="log">Contraseña:</label>
-          <input
-            type="password"
-            id="contraseña"
-            name="contraseña"
-            required
-          /><br />
+          <label for="username" class="log">Usuario:</label>
+          <input type="text" id="username" name="username" required /><br />
+          <label for="password" class="log">Contraseña:</label>
+          <input type="password" id="password" name="password" required /><br />
           <input type="submit" value="Log in" class="log" />
         </form>
       </div>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Detalle del Empleado</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      h2 {
+        background-color: #6c63ff;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        margin: 0;
+      }
+
+      .detail {
+        width: 80%;
+        margin: 20px auto;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      a {
+        color: #6c63ff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #4b49db;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Detalle del Empleado</h2>
+    <div class="detail">
+      <p>Cedula: {{ personal.id_Cedula }}</p>
+      <p>Nombre y Apellidos: {{ personal.Nombre_Apellidos }}</p>
+      <p>Cargo: {{ personal.Cargo_Empl }}</p>
+      <p>Departamento/Area: {{ personal.Dpto_Area }}</p>
+      <p>Salario: {{ personal.Salario }}</p>
+      <p>Subsidio de Transporte: {{ personal.Sub_Tpte }}</p>
+      <p>Gastos de Representación: {{ personal.Gastos_Rep }}</p>
+      <p>Sobresueldo: {{ personal.Sobresueldo }}</p>
+      <p>Viáticos: {{ personal.Viáticos }}</p>
+      <p>Comisiones: {{ personal.Comisiones }}</p>
+      <p>Primas y Pagos Extras: {{ personal.Primas_Pago_Extras }}</p>
+      <p>Tipo de Contrato: {{ personal.Tipo_Contr }}</p>
+      <p>Cuenta de Banco: {{ personal.Cta_Banco }}</p>
+      <p>EPS de Salud: {{ personal.Eps_Salud }}</p>
+      <p>Pensión: {{ personal.Pensión }}</p>
+      <p>Fondo de Solidaridad: {{ personal.Fdo_Sol }}</p>
+      <p>Fecha de Ingreso: {{ personal.Fecha_Ingreso }}</p>
+      <p>Fecha de Retiro: {{ personal.Fecha_Retiro }}</p>
+    </div>
+    <a href="{% url 'personal' %}">Volver a la lista de empleados</a>
+  </body>
+</html>

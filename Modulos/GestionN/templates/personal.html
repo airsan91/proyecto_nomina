@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Personal</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      h2 {
+        background-color: #6529a9;
+        color: #fff;
+        padding: 20px 0;
+        text-align: center;
+        margin: 0;
+      }
+
+      a {
+        color: #6c63ff;
+        text-decoration: none;
+      }
+
+      a:hover {
+        color: #4b49db;
+      }
+
+      form {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      ul {
+        list-style-type: none;
+        padding: 0;
+        width: 80%;
+        margin: 20px auto;
+      }
+
+      li {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 5px;
+      }
+      .center {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+      .center a {
+        margin: 0 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Personal</h2>
+    <ul>
+      {% for personal in personals %}
+      <li>
+        {{ personal.Nombre_Apellidos }} (Cedula: {{ personal.id_Cedula }})
+        <a href="{% url 'detalle_personal' personal.id_Cedula %}">Detalles</a> |
+        <a href="{% url 'editar_personal' personal.id_Cedula %}">Editar</a> |
+        <a href="{% url 'delete_personal' personal.id_Cedula %}">Eliminar</a>
+      </li>
+      {% endfor %}
+    </ul>
+    <div class="center">
+      <a href="{% url 'cerrarSesion' %}">Cerrar sesión</a>
+      <a href="{% url 'crearEmpleado' %}" class="btn">Crear empleado</a>
+    </div>
+  </body>
+</html>

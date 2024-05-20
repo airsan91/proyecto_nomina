@@ -1,5 +1,4 @@
 from django.db import models
-
 class Cargo(models.Model):
     id_Cargo = models.CharField(max_length=10, primary_key=True)
     Nombre = models.CharField(max_length=100)
@@ -73,3 +72,4 @@ class Descuento(models.Model):
     Fdo_Sol = models.CharField(max_length=100)
     Bancos = models.CharField(max_length=100)
     Fondo_Empleados = models.CharField(max_length=100)
+    
